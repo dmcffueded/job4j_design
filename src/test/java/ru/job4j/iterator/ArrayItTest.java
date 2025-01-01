@@ -7,7 +7,7 @@ class ArrayItTest {
 
     @Test
     void whenMultiCallHasNextThenTrue() {
-        ru.job4j.iterator.ArrayIt iterator = new ru.job4j.iterator.ArrayIt(
+        ArrayIt iterator = new ArrayIt(
                 new int[] {1, 2, 3}
         );
         boolean result = iterator.hasNext();
@@ -17,7 +17,7 @@ class ArrayItTest {
 
     @Test
     void whenReadSequence() {
-        ru.job4j.iterator.ArrayIt iterator = new ru.job4j.iterator.ArrayIt(
+        ArrayIt iterator = new ArrayIt(
                 new int[] {1, 2, 3}
         );
         assertThat(iterator.next()).isEqualTo(1);
