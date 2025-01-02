@@ -22,14 +22,14 @@ class BoxTest {
     }
 
     @Test
-    void HowManyIsNumberOfVerticesSphere() {
+    void howManyIsNumberOfVerticesSphere() {
         Box box = new Box(0, 10);
         Integer number = box.getNumberOfVertices();
         assertThat(number).isEqualTo(0);
     }
 
     @Test
-    void HowManyIsNumberOfVerticesTetrahedron() {
+    void howManyIsNumberOfVerticesTetrahedron() {
         Box box = new Box(4, 10);
         Integer number = box.getNumberOfVertices();
         assertThat(number).isEqualTo(4);
@@ -50,7 +50,7 @@ class BoxTest {
     }
 
     @Test
-    void AreaSphere() {
+    void areaSphere() {
         Box box = new Box(0, 10);
         double area = box.getArea();
         assertThat(area).isEqualTo(1256.637d, withPrecision(0.001d))
@@ -61,7 +61,7 @@ class BoxTest {
     }
 
     @Test
-    void AreaCube() {
+    void areaCube() {
         Box box = new Box(8, 10);
         double area = box.getArea();
         assertThat(area).isEqualTo(600.0d, withPrecision(0.1d))
