@@ -71,5 +71,4 @@ class BoxTest {
                 .isLessThan(600.1d);
     }
 
-
 }
