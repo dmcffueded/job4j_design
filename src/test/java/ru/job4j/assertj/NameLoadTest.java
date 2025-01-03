@@ -17,7 +17,6 @@ class NameLoadTest {
     @Test
     void whenParseEmptyArrayThenThrowIllegalArgumentException() {
         NameLoad nameLoad = new NameLoad();
-        // При вызове parse с пустым массивом выбрасывается исключение
         assertThatThrownBy(() -> nameLoad.parse())
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Names array is empty");
@@ -26,7 +25,6 @@ class NameLoadTest {
     @Test
     void whenParseInvalidFormatWithoutEqualsThenThrowIllegalArgumentException() {
         NameLoad nameLoad = new NameLoad();
-        // Если строка не содержит символ "=" (например, "key:value")
         assertThatThrownBy(() -> nameLoad.parse("key:value"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("this name: key:value does not contain the symbol '='");
@@ -35,7 +33,6 @@ class NameLoadTest {
     @Test
     void whenParseInvalidFormatStartsWithEqualsThenThrowIllegalArgumentException() {
         NameLoad nameLoad = new NameLoad();
-        // Если строка начинается с "=", выбрасывается исключение
         assertThatThrownBy(() -> nameLoad.parse("=value"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("this name: =value does not contain a key");
@@ -44,7 +41,6 @@ class NameLoadTest {
     @Test
     void whenParseInvalidFormatEndsWithEqualsThenThrowIllegalArgumentException() {
         NameLoad nameLoad = new NameLoad();
-        // Если строка заканчивается на "=", выбрасывается исключение
         assertThatThrownBy(() -> nameLoad.parse("key="))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("this name: key= does not contain a value");
@@ -53,7 +49,6 @@ class NameLoadTest {
     @Test
     void whenParseValidDataThenGetMapWithCorrectValues() {
         NameLoad nameLoad = new NameLoad();
-        // Проверка правильности данных, которые добавляются в карту
         nameLoad.parse("key1=value1", "key2=value2");
         assertThat(nameLoad.getMap())
                 .containsEntry("key1", "value1")
